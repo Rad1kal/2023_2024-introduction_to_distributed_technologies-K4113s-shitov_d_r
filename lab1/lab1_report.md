@@ -23,10 +23,10 @@ Date of finished: 31.09.2023
 - Докер уже был установлен на ПК, поэтому перехожу к установке Minikube
 
 - Установить Minikube решил с использованием Homebrew
-  ![Иллюстрация к проекту](../img/minikube.png)
+  ![Иллюстрация к проекту](/img/minikube.png)
 
 - Разворачиваю Minicube cluster
-  ![Иллюстрация к проекту](../img/mk-start.png)
+  ![Иллюстрация к проекту](/img/mk-start.png)
 
 - Создаю манифест для пода с контейнером vault внтури с портом 8200
 
@@ -71,7 +71,7 @@ minikube kubectl -- port-forward service/lab-1 8200:8200
 
 - Захожу на http://localhost:8200
 
-![Иллюстрация к проекту](../img/login-form.png)
+![Иллюстрация к проекту](/img/login-form.png)
 
 - Для нахождения токена смотрю логи vault
 
@@ -79,8 +79,8 @@ minikube kubectl -- port-forward service/lab-1 8200:8200
 kubectl logs lab-1
 ```
 
-![Иллюстрация к проекту](../img/token.png)
+![Иллюстрация к проекту](/img/token.png)
 
 - Копирую токен и зажожу
 
-![Иллюстрация к проекту](../img/login-succes.png)
+![Иллюстрация к проекту](/img/login-succes.png)
