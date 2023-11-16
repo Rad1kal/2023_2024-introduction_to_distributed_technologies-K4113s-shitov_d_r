@@ -24,3 +24,63 @@ Date of finished: 31.09.2023
 
 - Установить Minikube решил с использованием Homebrew
   ![Иллюстрация к проекту](../img/minikube.png)
+
+- Разворачиваю Minicube cluster
+  ![Иллюстрация к проекту](../img/mk-start.png)
+
+- Создаю манифест для пода с контейнером vault внтури с портом 8200
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lab-1
+  labels:
+    app: vault
+spec:
+  containers:
+    - name: vault
+      image: vault:1.13.3
+      ports:
+    	- containerPort: 8200
+```
+
+- Создаю под на основе манифеста
+
+```bash
+kubectl apply -f vault.yaml
+```
+
+- Проверяю успешность
+
+```bash
+kubectl get pods
+```
+
+- Создаю сервис для связи с подом
+
+```bash
+minikube kubectl -- expose pod lab-1 --type=NodePort --port=8200
+```
+
+- Пробрасываю порт для доступа к поду извне
+
+```bash
+minikube kubectl -- port-forward service/lab-1 8200:8200
+```
+
+- Захожу на http://localhost:8200
+
+![Иллюстрация к проекту](../img/login-form.png)
+
+- Для нахождения токена смотрю логи vault
+
+```bash
+kubectl logs lab-1
+```
+
+![Иллюстрация к проекту](../img/token.png)
+
+- Копирую токен и зажожу
+
+![Иллюстрация к проекту](../img/login-succes.png)
