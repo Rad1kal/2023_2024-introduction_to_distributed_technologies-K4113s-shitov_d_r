@@ -23,4 +23,4 @@ Date of finished: 31.09.2023
 - Докер уже был установлен на ПК, поэтому перехожу к установке Minikube
 
 - Установить Minikube решил с использованием Homebrew
-  ![Иллюстрация к проекту](https://github.com/Rad1kal/2023_2024-introduction_to_distributed_technologies-K4113s-shitov_d_r/raw/master/img/minikube.png)
+  ![Иллюстрация к проекту](../img/minikube.png)
