@@ -1,10 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-    name: ingress
+    name: front-ingress
 spec:
     rules:
-        - host: testlab3.com
+        - host: lab3test.com
           http:
               paths:
                   - path: /
@@ -13,8 +13,4 @@ spec:
                         service:
                             name: node-port
                             port:
-                                name: http
-    tls:
-        - hosts:
-              - testlab3.com
-          secretName: tls-secr
+                                number: 3000
