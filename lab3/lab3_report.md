@@ -78,19 +78,7 @@ spec:
         app: frontend
 ```
 
--   Далее для генерации ключа буду использовать OpenSSL, для этого используя Brew устанавливаю LibreSSL (напрямую OpenSSL не поставить). LibreSSL в настоящее время совместим с OpenSSL и работает, но, LibreSSL не определяется автоматически, поэтому Allegro CL необходимо сообщить, какая версия OpenSSL установлена.
-
-```bash
-export ACL_OPENSSL_VERSION=11
-```
-
--   После устанавливаю OpenSSL:
-
-```bash
-brew install openssl
-```
-
--   Генерирую ключ:
+-   Далее для генерации ключа буду использовать OpenSSL
 
 ```bash
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt -subj "/CN=lab3shitov.com"
