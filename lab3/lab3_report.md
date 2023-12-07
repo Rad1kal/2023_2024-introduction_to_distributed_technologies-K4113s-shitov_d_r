@@ -110,7 +110,7 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out
 kubectl -n kube-system create secret tls mkcert --key tls.key --cert tls.crt
 ```
 
--   Активирую аддон ingrss в миникуб
+-   Активирую и конфигурирую аддон ingress в minikube
 
 ```bash
 minikube addons configure ingress
@@ -126,7 +126,7 @@ metadata:
     name: front-ingress
 spec:
     rules:
-        - host: lab3test.com
+        - host: lab3shitov.com
           http:
               paths:
                   - path: /
@@ -140,9 +140,9 @@ spec:
 
 ![Иллюстрация к проекту](./img/ingIP.png)
 
--   Далее использую команду minikube tunnel и прописываю в host пару `192.168.49.2` `lab3test.com`
+-   Далее прописываю в host пару `192.168.49.2` `lab3shitov.com`
 
--   Перехожу по ссылке http://testlab3.com
+-   Перехожу по ссылке http://lab3shitov.com
     ![Иллюстрация к проекту](./img/danger.png)
     ![Иллюстрация к проекту](./img/web.png)
 
