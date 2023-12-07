@@ -93,7 +93,7 @@ brew install openssl
 -   Генерирую ключ:
 
 ```bash
-openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt -subj "/CN=lab3shitov.com"
 ```
 
 -x509 — уточнение, что нам нужен именно самоподписанный сертификат;
@@ -102,7 +102,7 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out
 -keyout — путь (если указан) и имя файла ключа;
 -out — путь (если указан) и имя файла сертификата.
 
-![Иллюстрация к проекту](./img/SSL.png)
+![Иллюстрация к проекту](./img/TSL.png)
 
 -   Далее импортирую сертификат в minikube:
 
@@ -149,3 +149,7 @@ spec:
 -   Проверка сертификата
 
 ![Иллюстрация к проекту](./img/sert.png)
+
+-   Схема
+
+![Иллюстрация к проекту](./img/shema.png)
